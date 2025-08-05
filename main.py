@@ -16,8 +16,12 @@ def load_key():
     
 
 def add(f):
-    login = input('Логин: ')
-    password = input('Пароль: ')
+    while True:
+        login = input('Логин: ')
+        password = input('Пароль: ')
+        if login and password:
+            break
+        print('Поля не должны быть пустыми')
     encrypted_password = f.encrypt(password.encode()).decode()
     with open('passwords.txt', 'a') as file:
         file.write(f'{login}|{encrypted_password}\n')

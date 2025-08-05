@@ -19,7 +19,8 @@ def main():
     while True:
         login = input('Логин: ')
         password = input('Пароль: ')
-        if not authorization(login, password, f): print('Неверное имя пользователя или пароль.')
+        if not authorization(login, password, f): 
+            print('Неверное имя пользователя или пароль.')
         else: 
             print('Успешная авторизация.')
             break
